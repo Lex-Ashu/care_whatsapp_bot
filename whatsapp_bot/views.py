@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.conf import settings
 from bot_engine.session_manager import SessionManager
-from .whatsapp_client import WhatsAppClient
+from .client import WhatsAppClient
 
 logger = logging.getLogger('whatsapp_bot')
 

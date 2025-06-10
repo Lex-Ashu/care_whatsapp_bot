@@ -121,3 +121,10 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+WHATSAPP_BUSINESS_API = {
+    'ACCESS_TOKEN': 'your_access_token_here',
+    'PHONE_NUMBER_ID': 'your_phone_number_id_here', 
+    'WEBHOOK_VERIFY_TOKEN': 'your_verify_token_here',
+    'API_VERSION': 'v18.0'
+}
