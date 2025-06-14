@@ -83,3 +83,17 @@ class SessionManager:
         except Exception as e:
             logger.error(f"Error clearing session for {whatsapp_id}: {str(e)}")
             return False
+            
+    @staticmethod
+    def logout_user(whatsapp_id):
+        try:
+            session = SessionManager.get_or_create_session(whatsapp_id)
+            session.is_authenticated = False
+            session.auth_token = None
+            session.current_state = 'new'
+            session.save()
+            logger.info(f"User logged out: {whatsapp_id}")
+            return True
+        except Exception as e:
+            logger.error(f"Error logging out user {whatsapp_id}: {str(e)}")
+            return False

@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "whatsapp_bot",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -123,8 +125,9 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 WHATSAPP_BUSINESS_API = {
-    'ACCESS_TOKEN': 'your_access_token_here',
-    'PHONE_NUMBER_ID': 'your_phone_number_id_here', 
-    'WEBHOOK_VERIFY_TOKEN': 'your_verify_token_here',
-    'API_VERSION': 'v18.0'
+    'ACCESS_TOKEN': 'EAAQj4fkyLt8BOzrFXttcbyHZAvZBMm9rWgQBel46zUPL6PMrgtNkZB0Yh6i6pKnuZBwg4VWzwwZBmFehnylZCaqwoKNBqGZBvKBGD2Yhwd0mO998BHc9FSD9VZAZAh6Co0JDmDmeffLk2Ay1FvXBw3VHpwH1fGC3f7Q4vUwXjQyQ6ZBZAhbBw3xxdltAG9WIXYe7CIjRMYZA5NVRFMOPjjcZCxc9PYlZCrHnYRbpbRQGEZD',
+    'PHONE_NUMBER_ID': '669163226282011', 
+    'WEBHOOK_VERIFY_TOKEN': 'GSoC2025CareBot',
+    'API_VERSION': 'v18.0',
+    'BASE_URL': f'https://graph.facebook.com/v18.0'
 }
