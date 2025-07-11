@@ -132,3 +132,5 @@ INFO 2025-07-11 18:47:47,813 autoreload 19881 8297904192 /Users/ashu/care_whatsa
 INFO 2025-07-11 18:47:48,121 autoreload 20454 8297904192 Watching for file changes with StatReloader
 INFO 2025-07-11 18:47:52,305 autoreload 20454 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/views.py changed, reloading.
 INFO 2025-07-11 18:47:52,500 autoreload 20507 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:55:26,005 autoreload 20507 8297904192 /Users/ashu/care_whatsapp_bot/core/admin.py changed, reloading.
+INFO 2025-07-11 18:55:26,456 autoreload 32853 8297904192 Watching for file changes with StatReloader
