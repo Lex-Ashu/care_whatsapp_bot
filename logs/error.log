@@ -1,0 +1,10 @@
+ERROR 2025-07-11 17:49:39,533 client 30326 8297904192 Error sending message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 17:58:34,578 client 43382 8297904192 Error sending message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:01:52,447 client 48045 8297904192 Error sending message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:05:38,880 client 53793 8297904192 Error sending message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:11:37,127 client 62258 8297904192 Error sending message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:21:00,359 client 77706 8297904192 Error sending template message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:21:42,349 client 78776 8297904192 Error sending template message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v18.0/651347521403933/messages
+ERROR 2025-07-11 18:22:08,310 client 79266 8297904192 Error sending template message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v22.0/651347521403933/messages
+ERROR 2025-07-11 18:24:04,049 client 81145 8297904192 Error sending template message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v22.0/651347521403933/messages
+ERROR 2025-07-11 18:30:15,435 client 91272 8297904192 Error sending template message to 918767341918: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v22.0/651347521403933/messages

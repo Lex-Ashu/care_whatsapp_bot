@@ -1,0 +1,134 @@
+INFO 2025-07-10 22:24:01,345 autoreload 76174 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-10 22:24:20,161 autoreload 76174 8297904192 /Users/ashu/care_whatsapp_bot/utils/constants.py changed, reloading.
+INFO 2025-07-10 22:24:20,396 autoreload 76454 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-10 22:24:37,694 autoreload 76755 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-10 22:24:55,878 autoreload 76755 8297904192 /Users/ashu/care_whatsapp_bot/utils/constants.py changed, reloading.
+INFO 2025-07-10 22:24:56,149 autoreload 77026 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-10 22:25:04,272 autoreload 77213 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-10 22:31:29,856 autoreload 83631 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 16:20:58,448 autoreload 20423 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 16:56:58,651 autoreload 61753 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 16:59:11,240 autoreload 65244 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 16:59:50,492 autoreload 66302 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 17:00:04,518 basehttp 66302 6135672832 "GET /webhook?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=test_challenge HTTP/1.1" 301 0
+INFO 2025-07-11 17:01:53,123 autoreload 68958 8297904192 Watching for file changes with StatReloader
+ERROR 2025-07-11 17:09:01,514 exception 68958 6135672832 Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+WARNING 2025-07-11 17:09:01,547 log 68958 6135672832 Bad Request: /webhook/
+WARNING 2025-07-11 17:09:01,547 basehttp 68958 6135672832 "GET /webhook/ HTTP/1.1" 400 71946
+WARNING 2025-07-11 17:09:14,121 log 68958 6135672832 Bad Request: /webhook/
+WARNING 2025-07-11 17:09:14,121 basehttp 68958 6135672832 "GET /webhook/ HTTP/1.1" 400 18
+INFO 2025-07-11 17:10:31,029 basehttp 68958 6135672832 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+ERROR 2025-07-11 17:10:51,721 exception 68958 6135672832 Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+WARNING 2025-07-11 17:10:51,739 log 68958 6135672832 Bad Request: /webhook/
+WARNING 2025-07-11 17:10:51,740 basehttp 68958 6135672832 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 400 73132
+INFO 2025-07-11 17:11:29,707 basehttp 68958 6135672832 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+INFO 2025-07-11 17:13:14,401 basehttp 68958 6135672832 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+INFO 2025-07-11 17:15:30,984 autoreload 68958 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 17:15:31,279 autoreload 89264 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 17:15:50,920 autoreload 89762 8297904192 Watching for file changes with StatReloader
+ERROR 2025-07-11 17:16:11,584 exception 89762 6122483712 Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/ashu/care_whatsapp_bot/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'whatsapp-bot.botforcare.social'. You may need to add 'whatsapp-bot.botforcare.social' to ALLOWED_HOSTS.
+WARNING 2025-07-11 17:16:11,615 log 89762 6122483712 Bad Request: /webhook/
+WARNING 2025-07-11 17:16:11,615 basehttp 89762 6122483712 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 400 73132
+INFO 2025-07-11 17:17:46,319 autoreload 89762 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 17:17:46,600 autoreload 92399 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 17:18:13,945 autoreload 92399 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 17:18:14,194 autoreload 93042 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 17:18:45,486 autoreload 93830 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 17:19:28,329 basehttp 93830 6168571904 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+INFO 2025-07-11 17:19:41,985 basehttp 93830 6168571904 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+WARNING 2025-07-11 17:35:56,615 log 93830 6168571904 Not Found: /
+WARNING 2025-07-11 17:35:56,616 basehttp 93830 6168571904 "GET /?hub.mode=subscribe&hub.challenge=1642337364&hub.verify_token=GSoC2025CareBot HTTP/1.1" 404 2298
+WARNING 2025-07-11 17:42:31,998 log 93830 6168571904 Bad Request: /webhook/
+WARNING 2025-07-11 17:42:31,999 basehttp 93830 6168571904 "GET /webhook/ HTTP/1.1" 400 18
+INFO 2025-07-11 17:42:59,671 basehttp 93830 6168571904 "GET /webhook/?hub.mode=subscribe&hub.challenge=626516656&hub.verify_token=GSoC2025CareBot HTTP/1.1" 200 9
+WARNING 2025-07-11 17:43:44,749 log 93830 6168571904 Bad Request: /webhook/
+WARNING 2025-07-11 17:43:44,749 basehttp 93830 6168571904 "GET /webhook/ HTTP/1.1" 400 18
+WARNING 2025-07-11 17:43:46,076 log 93830 6168571904 Not Found: /
+WARNING 2025-07-11 17:43:46,076 basehttp 93830 6168571904 "GET / HTTP/1.1" 404 2213
+WARNING 2025-07-11 17:43:46,825 log 93830 6168571904 Not Found: /
+WARNING 2025-07-11 17:43:46,826 basehttp 93830 6168571904 "GET / HTTP/1.1" 404 2213
+WARNING 2025-07-11 17:44:04,154 log 93830 6168571904 Not Found: /robots.txt
+WARNING 2025-07-11 17:44:04,155 basehttp 93830 6168571904 "GET /robots.txt HTTP/1.1" 404 2261
+WARNING 2025-07-11 17:44:04,889 log 93830 6168571904 Not Found: /robots.txt
+WARNING 2025-07-11 17:44:04,889 basehttp 93830 6168571904 "GET /robots.txt HTTP/1.1" 404 2261
+WARNING 2025-07-11 17:44:05,289 log 93830 6168571904 Not Found: /
+WARNING 2025-07-11 17:44:05,289 basehttp 93830 6168571904 "GET / HTTP/1.1" 404 2213
+WARNING 2025-07-11 17:45:20,620 log 93830 6168571904 Not Found: /
+WARNING 2025-07-11 17:45:20,620 basehttp 93830 6168571904 "GET / HTTP/1.1" 404 2213
+INFO 2025-07-11 17:45:40,003 basehttp 93830 6168571904 "GET /webhook/?hub.mode=subscribe&hub.verify_token=GSoC2025CareBot&hub.challenge=1234567890 HTTP/1.1" 200 10
+INFO 2025-07-11 17:57:36,431 autoreload 41766 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:06:45,554 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:06:46,920 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:06:50,806 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:15:59,339 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:16:00,257 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:16:00,570 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:16:36,780 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:17:00,073 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:17:01,371 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:17:01,572 basehttp 41766 6131757056 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:20:08,391 autoreload 41766 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/client.py changed, reloading.
+INFO 2025-07-11 18:20:08,791 autoreload 76690 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:20:20,038 autoreload 76690 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/client.py changed, reloading.
+INFO 2025-07-11 18:20:20,372 autoreload 76744 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:21:54,442 autoreload 76744 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 18:21:54,701 autoreload 79174 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:23:16,937 autoreload 79174 8297904192 /Users/ashu/care_whatsapp_bot/utils/constants.py changed, reloading.
+INFO 2025-07-11 18:23:17,236 autoreload 81023 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:29:49,507 basehttp 81023 6199554048 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:29:51,174 basehttp 81023 6199554048 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:29:51,215 basehttp 81023 6199554048 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:30:32,556 basehttp 81023 6199554048 "POST /webhook/ HTTP/1.1" 200 16
+INFO 2025-07-11 18:34:47,146 autoreload 99640 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:43:12,330 autoreload 99640 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 18:43:12,644 autoreload 14552 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:43:33,979 autoreload 14552 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/models.py changed, reloading.
+INFO 2025-07-11 18:43:34,243 autoreload 14617 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:45:05,400 autoreload 14617 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 18:45:05,676 autoreload 17101 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:45:11,857 autoreload 17101 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/views.py changed, reloading.
+INFO 2025-07-11 18:45:12,111 autoreload 17307 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:45:22,309 autoreload 17307 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/views.py changed, reloading.
+INFO 2025-07-11 18:45:22,547 autoreload 17586 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:45:58,997 autoreload 17586 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/client.py changed, reloading.
+INFO 2025-07-11 18:45:59,300 autoreload 17813 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:47:04,008 autoreload 17813 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 18:47:04,270 autoreload 19537 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:47:13,636 autoreload 19537 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/views.py changed, reloading.
+INFO 2025-07-11 18:47:13,921 autoreload 19802 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:47:26,274 autoreload 19802 8297904192 /Users/ashu/care_whatsapp_bot/care_im_bot/settings.py changed, reloading.
+INFO 2025-07-11 18:47:26,500 autoreload 19881 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:47:47,813 autoreload 19881 8297904192 /Users/ashu/care_whatsapp_bot/bot_engine/session_manager.py changed, reloading.
+INFO 2025-07-11 18:47:48,121 autoreload 20454 8297904192 Watching for file changes with StatReloader
+INFO 2025-07-11 18:47:52,305 autoreload 20454 8297904192 /Users/ashu/care_whatsapp_bot/whatsapp_bot/views.py changed, reloading.
+INFO 2025-07-11 18:47:52,500 autoreload 20507 8297904192 Watching for file changes with StatReloader

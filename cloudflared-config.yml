@@ -1,0 +1,22 @@
+# Cloudflare Tunnel configuration file
+
+# The tunnel ID - replace with your actual tunnel ID
+tunnel: 187a184d-d8c6-4be9-ae4e-bda574fc2427
+
+# Path to the credentials file for this tunnel
+credentials-file: /Users/ashu/.cloudflared/187a184d-d8c6-4be9-ae4e-bda574fc2427.json
+
+# Ingress rules define how traffic is routed through the tunnel
+ingress:
+  # Route traffic to your local Django server
+  - hostname: whatsapp-bot.botforcare.social
+    service: http://localhost:8000
+  
+  # Catch-all rule - return 404 for any other hostnames
+  - service: http_status:404
+
+# Optional: Configure logging
+logfile: /Users/ashu/care_whatsapp_bot/cloudflared.log
+
+# Optional: Configure metrics
+metrics: 127.0.0.1:20000

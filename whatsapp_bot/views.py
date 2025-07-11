@@ -19,36 +19,76 @@ def whatsapp_webhook(request):
 
 def verify_webhook(request):
     try:
+
         mode = request.GET.get('hub.mode')
         token = request.GET.get('hub.verify_token')
         challenge = request.GET.get('hub.challenge')
+        
+
+        if not all([mode, token, challenge]):
+            logger.warning("Webhook verification missing required parameters")
+            return HttpResponse("Missing parameters", status=400)
+        
+
         expected_token = settings.WHATSAPP_BUSINESS_API['WEBHOOK_VERIFY_TOKEN']
+        
+
         if mode == 'subscribe' and token == expected_token:
             logger.info("Webhook verified successfully")
             return HttpResponse(challenge)
         else:
-            logger.warning("Webhook verification failed")
+            logger.warning(f"Webhook verification failed: mode={mode}, token_match={token==expected_token}")
             return HttpResponse("Verification failed", status=403)
+    except KeyError as e:
+        logger.error(f"Webhook verification configuration error: {str(e)}")
+        return HttpResponse("Configuration error", status=500)
     except Exception as e:
-        logger.error(f"Webhook verification error: {str(e)}")
+        logger.error(f"Webhook verification error: {str(e)}", exc_info=True)
         return HttpResponse("Error", status=500)
 
 def handle_whatsapp_message(request):
     try:
-        body = json.loads(request.body.decode('utf-8'))
+
+        content_type = request.headers.get('Content-Type', '')
+        if not content_type.startswith('application/json'):
+            logger.warning(f"Invalid content type: {content_type}")
+            return JsonResponse({"status": "error", "message": "Invalid content type"}, status=400)
+        
+
+        try:
+            body = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON in webhook payload: {str(e)}")
+            return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
+        
+
         logger.debug(f"Received webhook data: {json.dumps(body, indent=2)}")
+        
+
         if 'entry' not in body:
-            return JsonResponse({"status": "no_entry"})
+            logger.warning("Webhook payload missing 'entry' field")
+            return JsonResponse({"status": "error", "message": "Missing entry field"}, status=400)
+        
+
+        message_processed = False
         for entry in body['entry']:
             if 'changes' not in entry:
                 continue
+                
             for change in entry['changes']:
-                if change.get('field') == 'messages':
+                if change.get('field') == 'messages' and 'value' in change:
                     process_message_change(change['value'])
-        return JsonResponse({"status": "ok"})
+                    message_processed = True
+        
+        if message_processed:
+            return JsonResponse({"status": "ok"})
+        else:
+            logger.info("No messages to process in webhook payload")
+            return JsonResponse({"status": "no_messages"})
+            
     except Exception as e:
-        logger.error(f"Error handling WhatsApp message: {str(e)}")
-        return JsonResponse({"status": "error", "message": str(e)}, status=500)
+        logger.error(f"Error handling WhatsApp message: {str(e)}", exc_info=True)
+        return JsonResponse({"status": "error", "message": "Internal server error"}, status=500)
 
 def process_message_change(message_data):
     try:
@@ -212,9 +252,21 @@ Type 'patient' or 'staff' to get started!"""
         return "Please type 'patient' for patient access, 'staff' for hospital staff access, or 'help' for more information."
 
 def handle_patient_authentication(from_number, text_content):
-    if len(text_content.strip()) >= 5:
-        SessionManager.authenticate_user(from_number, 'patient', 'temp_token_123')
+
+    patient_id = text_content.strip()
+    if len(patient_id) < 5:
+        return "Invalid Patient ID or phone number. Please provide a valid Patient ID (e.g., P123456) or registered phone number."
+    
+    try:
+
+        
+
+        SessionManager.authenticate_user(from_number, 'patient', patient_id)
         SessionManager.update_session_state(from_number, 'patient_menu')
+        
+
+        logger.info(f"Patient authenticated successfully: {from_number} with ID {patient_id}")
+        
         return """✅ Authentication Successful!
 
 Welcome to your CARE patient portal. Here's what you can do:
@@ -228,13 +280,30 @@ Welcome to your CARE patient portal. Here's what you can do:
 • 'logout' - End session
 
 What would you like to do?"""
-    else:
-        return "Invalid Patient ID or phone number. Please provide a valid Patient ID (e.g., P123456) or registered phone number."
+    except Exception as e:
+        logger.error(f"Error authenticating patient {from_number}: {str(e)}", exc_info=True)
+        return "Sorry, we couldn't authenticate you at this time. Please try again later."
 
 def handle_staff_authentication(from_number, text_content):
-    if ':' in text_content and len(text_content.strip()) >= 8:
-        SessionManager.authenticate_user(from_number, 'staff', 'staff_token_456')
+
+    if ':' not in text_content or len(text_content.strip()) < 8:
+        return "Invalid staff credentials. Please use format: StaffID:Password (e.g., STAFF123:password123)"
+    
+    try:
+
+        staff_id, password = text_content.strip().split(':', 1)
+        
+
+        if not staff_id or not password or len(password) < 6:
+            return "Invalid credentials. Please check your StaffID and Password."
+        
+
+        SessionManager.authenticate_user(from_number, 'staff', staff_id)
         SessionManager.update_session_state(from_number, 'staff_menu')
+        
+
+        logger.info(f"Staff authenticated successfully: {from_number} with ID {staff_id}")
+        
         return """✅ Staff Authentication Successful!
 
 Welcome to CARE Staff Portal. Available commands:
@@ -249,8 +318,11 @@ Welcome to CARE Staff Portal. Available commands:
 Example: search P123456
 
 What would you like to do?"""
-    else:
-        return "Invalid staff credentials. Please use format: StaffID:Password (e.g., STAFF123:password123)"
+    except ValueError:
+        return "Invalid format. Please use: StaffID:Password"
+    except Exception as e:
+        logger.error(f"Error authenticating staff {from_number}: {str(e)}", exc_info=True)
+        return "Sorry, we couldn't authenticate you at this time. Please try again later."
 
 def handle_authenticated_user(from_number, text_content):
     session = SessionManager.get_or_create_session(from_number)
